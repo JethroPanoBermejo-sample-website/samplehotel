@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en-PH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore rooms, rates, and stay packages at Habagat House, a fictional boutique hotel concept in Liwliwa, Zambales.">
+  <meta name="theme-color" content="#f6f3e9">
+  <title>Habagat House | Liwliwa, Zambales</title>
+  <link rel="icon" type="image/png" href="./asset/images/habagat-icon.png">
+  <link rel="stylesheet" href="./asset/css/style.css">
+  <script src="./asset/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Habagat House home">Habagat <span>House</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" hidden>Menu</button>
+      <nav id="navigation" aria-label="Main navigation">
+        <a href="#rooms">Rooms</a>
+        <a href="#packages">Packages</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#location">Location</a>
+      </nav>
+      <a class="button header-cta" href="#stay">Check dates <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-photo" src="./asset/images/habagat-pool.webp" srcset="./asset/images/habagat-pool-small.webp 768w, ./asset/images/habagat-pool.webp 1536w" sizes="100vw" alt="Timber hotel pavilion and pool beside the sea" width="1536" height="1024" fetchpriority="high">
+      <div class="shell hero-content">
+        <h1 id="hero-title">Stay by the sea<br>in Liwliwa.</h1>
+        <p>A small beachside hotel in Zambales, with garden rooms, a pool under the palms, and breakfast by the water.</p>
+        <a class="hero-link" href="#rooms">Explore the rooms <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <section class="shell stay-section" id="stay" aria-labelledby="stay-title">
+      <div class="stay-panel">
+        <div class="stay-heading">
+          <h2 id="stay-title">Plan your stay</h2>
+          <p>Compare rooms and sample rates for your dates.</p>
+        </div>
+        <form id="stay-form" class="stay-form">
+          <label for="check-in">Check-in <input id="check-in" type="date" required></label>
+          <label for="check-out">Check-out <input id="check-out" type="date" required></label>
+          <label for="guests">Guests
+            <select id="guests">
+              <option value="1">1 guest</option>
+              <option value="2" selected>2 guests</option>
+              <option value="3">3 guests</option>
+              <option value="4">4 guests</option>
+            </select>
+          </label>
+          <button class="button" type="submit" disabled>Find rooms <span aria-hidden="true">→</span></button>
+        </form>
+        <div id="package-selection" class="package-selection" hidden>
+          <p id="selected-package-name"></p>
+          <button type="button" class="text-button" id="apply-package-terms" hidden>Set 2 nights for 2 guests</button>
+          <button type="button" class="text-button" id="clear-package">Remove package</button>
+        </div>
+        <noscript><p>Turn on JavaScript to preview stays. Room rates and packages are listed below.</p></noscript>
+        <div id="stay-results" class="stay-results" hidden>
+          <h3 id="stay-summary" tabindex="-1"></h3>
+          <p>Sample estimates for one room. Live inventory is unavailable in this demo.</p>
+          <div id="room-results" class="room-results"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section rooms" id="rooms" aria-labelledby="rooms-title">
+      <div class="section-heading">
+        <h2 id="rooms-title">Rooms &amp; suites</h2>
+        <p>Breakfast and pool access come with every room.</p>
+      </div>
+      <div class="room-grid">
+        <article class="room">
+          <img src="./asset/images/garden-king.webp" width="886" height="442" loading="lazy" alt="Garden King bed beside a shaded patio and palms">
+          <div class="room-copy">
+            <h3>Garden King</h3>
+            <p>A ground-floor king room with a shaded patio and space to rinse off after the beach.</p>
+            <p class="room-spec">2 guests <span aria-hidden="true">·</span> 26 m² <span aria-hidden="true">·</span> King bed</p>
+            <div class="room-foot"><p><strong>₱4,900</strong> / night</p><button class="text-button" type="button" data-room="garden" aria-label="Check dates for Garden King" disabled>Check dates <span aria-hidden="true">↗</span></button></div>
+          </div>
+        </article>
+        <article class="room">
+          <img src="./asset/images/balcony-king.webp" width="886" height="442" loading="lazy" alt="Balcony King room opening onto a terrace overlooking the sea">
+          <div class="room-copy">
+            <h3>Balcony King</h3>
+            <p>An upstairs king room with two chairs on a private balcony facing the coast.</p>
+            <p class="room-spec">2 guests <span aria-hidden="true">·</span> 32 m² <span aria-hidden="true">·</span> King bed</p>
+            <div class="room-foot"><p><strong>₱6,400</strong> / night</p><button class="text-button" type="button" data-room="balcony" aria-label="Check dates for Balcony King" disabled>Check dates <span aria-hidden="true">↗</span></button></div>
+          </div>
+        </article>
+        <article class="room">
+          <img src="./asset/images/family-suite.webp" width="886" height="442" loading="lazy" alt="Family Suite living room between two bedrooms">
+          <div class="room-copy">
+            <h3>Family Suite</h3>
+            <p>Two bedrooms off a shared living room, with a terrace for sandy feet and surfboards.</p>
+            <p class="room-spec">4 guests <span aria-hidden="true">·</span> 64 m² <span aria-hidden="true">·</span> 2 queen beds</p>
+            <div class="room-foot"><p><strong>₱9,800</strong> / night</p><button class="text-button" type="button" data-room="family" aria-label="Check dates for Family Suite" disabled>Check dates <span aria-hidden="true">↗</span></button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="facilities-band">
+      <section class="shell section facilities" id="facilities" aria-labelledby="facilities-title">
+        <img src="./asset/images/breakfast.webp" width="886" height="442" loading="lazy" alt="Filipino silog plates with fresh mango at an open-air dining room">
+        <div class="facilities-copy">
+          <h2 id="facilities-title">Around the house</h2>
+          <dl>
+            <div><dt>Pool</dt><dd>Open to staying guests from 7 AM to 8 PM. Towels are available by the pool.</dd></div>
+            <div><dt>Breakfast room</dt><dd>Silog plates, seasonal fruit, and local coffee served from 7 to 10 AM.</dd></div>
+            <div><dt>Beach access</dt><dd>Take the sandy path to the shore. The front desk can help arrange a surf lesson.</dd></div>
+          </dl>
+        </div>
+      </section>
+    </div>
+
+    <section class="shell section packages" id="packages" aria-labelledby="packages-title">
+      <div class="section-heading">
+        <h2 id="packages-title">Stay packages</h2>
+        <p>Two-night stays for two, with breakfast each morning.</p>
+      </div>
+      <div class="package-grid">
+        <article class="package">
+          <h3>Slow Weekend</h3>
+          <p>Two nights in a Garden King, one dinner for two and late checkout at 1 PM.</p>
+          <div class="room-foot"><p><strong>₱11,500</strong> / 2 nights</p><button class="text-button" type="button" data-package="weekend" aria-label="Check package dates for Slow Weekend" disabled>Check package dates <span aria-hidden="true">↗</span></button></div>
+        </article>
+        <article class="package">
+          <h3>Surf &amp; Stay</h3>
+          <p>Two nights in a Balcony King with a one-hour surf lesson for two and board hire.</p>
+          <div class="room-foot"><p><strong>₱14,500</strong> / 2 nights</p><button class="text-button" type="button" data-package="surf" aria-label="Check package dates for Surf &amp; Stay" disabled>Check package dates <span aria-hidden="true">↗</span></button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="location" id="location" aria-labelledby="location-title">
+      <div class="shell location-inner">
+        <div>
+          <h2 id="location-title">Find us in Liwliwa</h2>
+          <p>San Felipe, Zambales, Philippines</p>
+          <a class="button light-button" href="https://www.google.com/maps/search/?api=1&amp;query=Liwliwa+San+Felipe+Zambales" target="_blank" rel="noopener">View area on Google Maps <span aria-hidden="true">↗</span></a>
+        </div>
+        <dl>
+          <div><dt>Check-in</dt><dd>From 3 PM</dd></div>
+          <div><dt>Check-out</dt><dd>By 11 AM</dd></div>
+          <div><dt>Reservations</dt><dd><a href="#stay">Start a demo inquiry</a></dd></div>
+          <div><dt>Sample email</dt><dd>stay@habagathouse.example</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <a class="brand" href="#top">Habagat <span>House</span></a>
+      <p>Fictional hotel concept for WorkWithJethro. Rates and photos are illustrative.</p>
+    </div>
+  </footer>
+
+  <dialog id="inquiry-dialog" aria-labelledby="inquiry-title">
+    <form id="inquiry-form" method="dialog" class="inquiry">
+      <button class="dialog-close" type="submit" value="cancel" formnovalidate aria-label="Close inquiry">×</button>
+      <h2 id="inquiry-title">Review your stay inquiry</h2>
+      <p id="inquiry-details"></p>
+      <p id="inquiry-disclosure">This demo runs in your browser. No reservation or payment will be made.</p>
+      <button class="button" type="submit" value="preview" id="confirm-inquiry" aria-describedby="inquiry-disclosure">Complete demo request <span aria-hidden="true">→</span></button>
+      <p class="inquiry-status" id="inquiry-status" role="status" hidden></p>
+    </form>
+  </dialog>
+</body>
+</html>
